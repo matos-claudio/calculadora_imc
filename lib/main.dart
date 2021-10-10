@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: Home(),
   ));
 }
@@ -44,29 +44,35 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    const title = Text("Calculadora de IMC");
+    const iconRefresh = Icon(Icons.refresh);
+    const paddingBody = EdgeInsets.fromLTRB(10, 0, 10, 0);
+    const iconPerson = Icon(
+      Icons.person_outline,
+      size: 120.0,
+      color: Colors.pinkAccent,
+    );
+    const paddingForm = Padding(padding: EdgeInsets.all(8.0));
+
     return Scaffold(
         appBar: AppBar(
-          title: Text("Calculadora de IMC"),
+          title: title,
           centerTitle: true,
           backgroundColor: Colors.pinkAccent,
           actions: <Widget>[
-            IconButton(onPressed: _resetFields, icon: Icon(Icons.refresh))
+            IconButton(onPressed: _resetFields, icon: iconRefresh)
           ],
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+            padding: paddingBody,
             child: Form(
                 key: _globalKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Padding(padding: EdgeInsets.all(8.0)),
-                    Icon(
-                      Icons.person_outline,
-                      size: 120.0,
-                      color: Colors.pinkAccent,
-                    ),
+                    paddingForm,
+                    iconPerson,
                     TextFormField(
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
