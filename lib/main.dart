@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Padding(padding: EdgeInsets.all(10)),
+                    Padding(padding: EdgeInsets.all(8.0)),
                     Icon(
                       Icons.person_outline,
                       size: 120.0,
